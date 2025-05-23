@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Cachorro</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: sans-serif;
+      background-color: #fefefe;
+      display: flex;
+      flex-flow: column wrap;
+      justify-content: center;
+      align-items: center;
+    }
+    canvas {
+      border: 1px solid #333;
+      background-color: #fff8f0;
+      margin-top: 20px;
+    }
+    button {
+      margin-top: 20px; 
+      padding: 10px 20px;
+      font-size: 18px; 
+      background-color: #efe3c1;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    </style>
+</head>
+<body>
+  <canvas id="idCanvas" width="500" height="600" style="border:1px solid black; border-radius: 8px;"></canvas> 
+<!--Borda no style para ver o tamanho do canvas e botao para ativar o desenho no canva-->
+  <button onclick="cachorro(); return false;">Veja o catioro</button> 
+<script>
+    const canvas = document.getElementById("idCanvas");
+    const ctx = canvas.getContext("2d");
+   
+    /* canvas.addEventListener("mousemove", function(event) {  método para conseguir ver as coordenadas dentro do canva de acordo com a posição do mouse, imprimindo no console.log
+      const rect = canvas.getBoundingClientRect();
+      const x = event.clientX - rect.left;
+      const y = event.clientY - rect.top;
+      console.log(`X: ${x}, Y: ${y}`);
+    }); */
+
+    function cachorro(){
+      ctx.lineWidth = 3; //tamanho da borda dos desenhos
+
+      // cabeça
+      ctx.fillStyle = "#d8a86e";
+      ctx.strokeStyle = "black";
+      ctx.beginPath();
+      ctx.roundRect(100, 100, 200, 150, 20); //metodo para fazer retangulo arredondado
+      ctx.fill();
+      ctx.stroke();
+
+      // orelha esquerda
+      ctx.beginPath();
+      ctx.moveTo(108,100); //desenho das orelhas foi feito linha a linha seguindo as coordenadas no console log como referência
+      ctx.lineTo(82,120);
+      ctx.lineTo(82,170);
+      ctx.lineTo(100,150);
+      ctx.closePath();
+      ctx.fillStyle = "#b37742";
+      ctx.fill();
+      ctx.stroke();
+
+      // orelha direita
+      ctx.beginPath();
+      ctx.moveTo(290,100);
+      ctx.lineTo(315,120);
+      ctx.lineTo(315,170);
+      ctx.lineTo(300,150);
+      ctx.closePath();
+      ctx.fill();
+      ctx.stroke();
+      
+      // olhos
+      ctx.fillStyle = "black";
+      ctx.beginPath();
+      ctx.arc(150,148, 10, 0, 2 * Math.PI);
+      ctx.fill();
+      ctx.stroke();
+
+      ctx.beginPath();
+      ctx.arc(250, 148, 10, 0, 2 * Math.PI); //olhos foram feitos com o método de circunferencia
+      ctx.fill();
+      ctx.stroke();
+
+      // focinho
+      ctx.beginPath();
+      ctx.fillStyle = "#884400"; //focinho tambem feito linha a linha para imitar um triangulo invertido
+      ctx.moveTo(198, 226);
+      ctx.lineTo(184, 210);
+      ctx.lineTo(212, 210);
+      ctx.closePath();
+      ctx.fill();
+      ctx.stroke();
+
+      // corpo
+      ctx.fillStyle = "#e0b57c";
+      ctx.beginPath();
+      ctx.roundRect(120, 250, 160, 220, 30); //corpo virou um retangulo arredondado
+      ctx.fill();
+      ctx.stroke();
+
+      //patinhas
+      
+      ctx.beginPath();
+      ctx.moveTo(135,430);
+      ctx.lineTo(135,485);
+      ctx.lineTo(155,485);    //patinhas todas feitas linha a linha
+      ctx.lineTo(155,430);
+      ctx.stroke();
+      ctx.closePath();
+      ctx.fillStyle = "#d8a86e";
+      ctx.fill();
+      ctx.closePath();
+      ctx.fillStyle = "#d8a86e";
+      ctx.fill();
+
+      
+      ctx.beginPath();
+      ctx.moveTo(160,340);
+      ctx.lineTo(160,485);
+      ctx.lineTo(185,485);
+      ctx.lineTo(185,340);
+      ctx.stroke();
+      ctx.closePath();
+      ctx.fillStyle = "#d8a86e";
+      ctx.fill();
+      ctx.closePath();
+      ctx.fillStyle = "#d8a86e";
+      ctx.fill();
+
+      ctx.beginPath();
+      ctx.moveTo(200,340);
+      ctx.lineTo(200,485);
+      ctx.lineTo(225,485);
+      ctx.lineTo(225,340);
+      ctx.stroke();
+      ctx.closePath();
+      ctx.fillStyle = "#d8a86e";
+      ctx.fill();
+      ctx.closePath();
+      ctx.fillStyle = "#d8a86e";
+      ctx.fill();
+
+      ctx.beginPath();
+      ctx.moveTo(230,430);
+      ctx.lineTo(230,485);
+      ctx.lineTo(255,485);
+      ctx.lineTo(255,430);
+      ctx.stroke();
+      ctx.closePath();
+      ctx.fillStyle = "#d8a86e";
+      ctx.fill();
+      ctx.closePath();
+      ctx.fillStyle = "#d8a86e";
+      ctx.fill();
+    
+      // rabo
+      ctx.beginPath();
+      ctx.moveTo(280, 450);                        
+      ctx.quadraticCurveTo(400, 250, 280, 420);    //Desenho de linha curva para o rabo e fechamento com closePath para ele poder ser pintado
+      ctx.lineTo(280, 450);                       
+      ctx.closePath();                             
+      ctx.fillStyle = "#a0672f";                   
+      ctx.fill();
+      ctx.stroke();
+    }
+
+  </script>
+</body>
+</html>
