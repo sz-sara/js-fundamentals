@@ -1,6 +1,6 @@
 # 📘 Estudos com Eloquent JavaScript
 
-Repositório com anotações e soluções de exercícios feitas durante a leitura do livro [Eloquent JavaScript](https://github.com/braziljs/eloquente-javascript), 3ª edição.
+Repositório com anotações e soluções de exercícios feitas durante a leitura do livro [Eloquent JavaScript](https://github.com/braziljs/eloquente-javascript), 2ª edição.
 
 ## 📚 Estrutura
 
